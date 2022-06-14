@@ -18,15 +18,15 @@ interface IUser {
 class User implements IUser {
     id: string
     constructor(public username: string, public age: number, public hobbies: string[]) {
+        this.id = uuidv4();
         this.username = username;
         this.age = age;
         this.hobbies = hobbies;
-        this.id = uuidv4();
     }
 
     async save(): Promise<any> {
         const users: TUser[] | any = await User.getAll()
-
+        console.log(this.toJSON(), 'TO JSON')
         users.push(this.toJSON())
         return new Promise((resolve, reject) => {
             console.log('USERS', users)
@@ -46,12 +46,13 @@ class User implements IUser {
     }
 
     toJSON() {
-        return JSON.stringify({
+        return {
+            id: this.id,
             username: this.username,
             age: this.age,
-            hobbies: this.hobbies,
-            id: this.id
-        })
+            hobbies: this.hobbies
+        }
+
     }
     static getAll() {
         return new Promise((resolve, reject) => {
