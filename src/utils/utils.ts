@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 export const decodePOSTComponent = (body: string) => {
     const obj: any = {}
     const string = decodeURIComponent(body);
@@ -10,5 +12,7 @@ export const decodePOSTComponent = (body: string) => {
 }
 
 export const onBuildArrayComponent = (hobbies) => {
-    return hobbies.split(',').map(item => item.trim())
+    return hobbies && hobbies.split(',').map(item => item.trim())
 }
+
+export const PORT: string | number = process.env.PORT;

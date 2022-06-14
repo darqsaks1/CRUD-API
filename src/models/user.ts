@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as fs from 'fs'
 import * as path from 'path'
 
-type TUser = {
+export type TUser = {
     username: string,
     age: number,
     hobbies: string[],
@@ -26,10 +26,8 @@ class User implements IUser {
 
     async save(): Promise<any> {
         const users: TUser[] | any = await User.getAll()
-        console.log(this.toJSON(), 'TO JSON')
         users.push(this.toJSON())
         return new Promise((resolve, reject) => {
-            console.log('USERS', users)
             fs.writeFile(
                 path.join(__dirname, '..', 'data', 'users.json'),
                 JSON.stringify(users),
@@ -52,8 +50,8 @@ class User implements IUser {
             age: this.age,
             hobbies: this.hobbies
         }
-
     }
+    
     static getAll() {
         return new Promise((resolve, reject) => {
             fs.readFile(
