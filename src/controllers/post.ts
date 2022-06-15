@@ -24,7 +24,7 @@ export const postController = (req, res) => {
                 const user: User = new User(obj.username, +obj.age, hobbies)
                 await user.save()
             })
-            res.end(`User was saved on "CRUD-API/src/data/users.json" base.username: ${obj.username}, age: ${obj.age}, hobbies: ${hobbies.join(',')} `)
+            res.end(`User was saved on "CRUD-API/src/data/users.json" base. username: ${obj.username}, age: ${obj.age}, hobbies: ${hobbies.join(',')} `)
         }
     })
 }
