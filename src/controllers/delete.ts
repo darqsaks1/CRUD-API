@@ -5,7 +5,7 @@ import { findUserIdFromUrl, uuidv4RegExpValidation, onBuildArrayComponent, decod
 
 export const deleteController = async (req, res) => {
     try {
-        const id: string = findUserIdFromUrl(req.url)
+        let id: string = findUserIdFromUrl(req.url)
         const user: any = new User()
         const candidate: object[] = await user.getOne(id)
         const validate: [] = uuidv4RegExpValidation(id)
@@ -27,6 +27,7 @@ export const deleteController = async (req, res) => {
         }
 
     } catch (error) {
-        throw error
+        res.writeHead(HTTP_STATUS.SERVER_ERROR, HEAD_CONTENT);
+        res.end(JSON.stringify(`Server Error ${error}`));
     }
 }

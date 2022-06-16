@@ -4,6 +4,7 @@ import { findUserIdFromUrl, uuidv4RegExpValidation, onBuildArrayComponent, decod
 
 export const putController = async (req, res) => {
     try {
+        
         const body: Buffer[] = []
         req.on('data', async (data) => {
             const id: string = findUserIdFromUrl(req.url)
@@ -38,6 +39,7 @@ export const putController = async (req, res) => {
             }
         })
     } catch (error) {
-        throw error
+        res.writeHead(HTTP_STATUS.SERVER_ERROR, HEAD_CONTENT);
+        res.end(JSON.stringify(`Server Error ${error}`));
     }
 }

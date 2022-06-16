@@ -5,9 +5,10 @@
   "main": "main.ts",
   "scripts": {
     "test": "test",
-    "start": "node src/index.ts",
-    "dev": "nodemon src/index.ts",
-    "prod": "webpack --mode development"
+    "dev": "nodemon app.ts",
+    "start:multi": "nodemon cluster.ts",
+    "prod": "webpack --mode development",
+    "start:prod": "webpack --mode development && node ./dist/bundle.js"
   },
   "repository": {
     "type": "git",
