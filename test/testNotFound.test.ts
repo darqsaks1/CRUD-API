@@ -7,7 +7,7 @@ const testUnvalid = 'fssd=GENAgg&age=23&hobbies=drug%2C%20sex'
 const notFound = 'a9df5b87-8764-42e6-9069-8474237b1598';
 jest.useRealTimers()
 
-describe('Test 1: Not succsess  round for user ', () => {
+describe('Test 2: Not succsess  round for user ', () => {
 
     it('POST must return error with invalid response', async () => {
         jest.setTimeout(35000)

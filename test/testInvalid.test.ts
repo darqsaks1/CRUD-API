@@ -5,7 +5,7 @@ const request = supertest(server);
 const notFound = 'a23423423423423423efqef9df5b87-8764-42e6-9069-8474237b1598';
 jest.useRealTimers()
 
-describe('Test 1: Not succsess  round for user ', () => {
+describe('Test 3: Invalid id ', () => {
 
     it('GET should retun BAD_RESPONSE if id is invalid', async () => {
         await request
