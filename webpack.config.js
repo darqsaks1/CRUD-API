@@ -2,14 +2,14 @@ const path = require("path");
 const ROOT_DIR = path.resolve(__dirname, "..");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: "./app.ts",
 
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
   },
   node: {
-    __dirname: false,
+    __dirname: true,
   },
   target: "node",
   devtool: "source-map",

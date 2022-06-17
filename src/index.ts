@@ -9,7 +9,7 @@ import {
 } from './controllers';
 import { HEAD_CONTENT, HTTP_STATUS } from './utils/constants';
 
-export const server = http.createServer(async (req, res) => {
+export const server = http.createServer(async (req: any, res: any) => {
   const { POST_ROUTE, GET_ALL_ROUTE } = process.env;
   if (req.method === 'POST' && req.url === POST_ROUTE) {
     postController(req, res);
