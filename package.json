@@ -1,0 +1,71 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "rss task",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "nodemon app.ts",
+    "start:multi": "nodemon cluster.ts",
+    "test": "jest",
+    "prod": "webpack --mode development",
+    "start:prod": "webpack --mode development && node ./dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darqsaks1/CRUD-API.git"
+  },
+  "author": "artsiom statuta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darqsaks1/CRUD-API/issues"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest",
+      "\\.js$": "./node_modules/babel-jest"
+    }
+  },
+  "homepage": "https://github.com/darqsaks1/CRUD-API#readme",
+  "dependencies": {
+    "@types/node": "^17.0.42",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.16",
+    "source-map-loader": "^4.0.0",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.18.2",
+    "@types/jest": "^28.1.2",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "babel-jest": "^28.1.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "jest": "^28.1.1",
+    "prettier": "2.6.2",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.5",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
+  }
+}
